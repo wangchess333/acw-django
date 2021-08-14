@@ -5,7 +5,7 @@ from login.models import Userpass
 
 class BlogArticles(models.Model):
 	title = models.CharField(max_length=300)
-	author = models.ForeignKey(Userpass,to_field='uname',on_delete=models.DO_NOTHING)
+	author = models.ForeignKey(User,to_field='username',on_delete=models.CASCADE)
 	body = models.TextField()
 	publish = models.DateTimeField(default=timezone.now)
 
